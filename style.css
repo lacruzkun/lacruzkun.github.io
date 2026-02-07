@@ -48,19 +48,23 @@ a:hover {
 }
 
 .name .p-name{
+  position: absolute;
+  top: 10%;
   font-weight: 700;
   font-size: 3rem;
   padding:  0 10%;
   margin: 0;
-  z-index: 10;
+  z-index: 2;
 }
 
 .name .p-des{
+  position: absolute;
+  top: 50%;
   font-weight: 400;
   font-size: 1rem;
   padding: 0 10%;
   margin: 0;
-  z-index: 10;
+  z-index: 2;
 }
 
 header {
