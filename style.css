@@ -172,9 +172,7 @@ main {
 }
 
 .blog-card:hover {
-  /* transform: translateY(-10px); */
   animation: wave 0.8s ease-in-out;
-
 }
 
 .blog-card::after {
