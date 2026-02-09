@@ -11,12 +11,12 @@
 
 .name {
   position: relative;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  /* flex-direction: column; */
   justify-content: center;
   align-items: baseline;
   height: 70%;
-  width: 100%;
+  /* width: 100%; */
   background:
       linear-gradient(180deg, rgb(var(--bright1-color), 1), rgb(var(--base-color)));
 
@@ -37,7 +37,11 @@ a:hover {
   top: -40%;
   right: 0%;
   height: 200%;
+  transform: translateY(100%);
   aspect-ratio: 1/1;
+  animation: in-from-bottom 0.7s ease-out;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
 }
 
 .pfp img {
@@ -71,20 +75,25 @@ header {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  width: 80%;
 }
 
 main {
-  display: flex;
-  position: relative;
+  display: grid;
+  /* position: relative; */
   height: 40vh;
-  width: 80%;
-  flex-direction: row;
-  justify-content: center;
+  /* flex-direction: row; */
+  /* justify-content: center; */
   align-items: flex-end;
   overflow-y: hidden;
   box-shadow: 0 30px 30px -30px rgba(0, 0, 0, 0.5);
+  grid-template-columns: 90vw;
   border-radius: var(--border-radius);
+  margin: auto;
+  animation: in-from-left 0.7s ease-out;
+}
+
+.projects{
+  animation: in-from-bottom 0.7s ease-in-out;
 }
 
 .projects .project{
@@ -164,6 +173,11 @@ main {
   z-index: 1;
 }
 
+.blog {
+  animation: in-from-bottom-200 0.7s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
 .blog-card {
   display: grid;
   grid-template-columns: minmax(50px, 0.2fr) minmax(100px, 1fr);
@@ -222,7 +236,6 @@ footer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 5rem;
-  width: 80%;
   margin: auto;
 }
 
@@ -252,6 +265,24 @@ body {
   }
 }
 
+@keyframes in-from-bottom {
+  0% {
+  transform: translateY(100%);
+  }
+  100% {
+  transform: translateY(0%);
+  }
+}
+
+@keyframes in-from-bottom-200 {
+  0% {
+  transform: translateY(200%);
+  }
+  100% {
+  transform: translateY(0%);
+  }
+}
+
 @keyframes expand {
 0% { transform: scale(1); }
 50% { transform: scale(1.1); }
@@ -267,3 +298,4 @@ body {
   80%  { transform: rotate(-2deg); }
   100% { transform: rotate(0deg); }
 }
+
